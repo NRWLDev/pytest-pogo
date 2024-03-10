@@ -1,0 +1,18 @@
+---
+version: '3'
+services:
+  pytest_pogo_postgres_unit:
+    image: postgres:14-alpine
+    container_name: pytest-pogo-postgres-test
+    ports:
+      - "5436:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: unit
+      POSTGRES_DB: unit
+    networks:
+      - pytest-pogo-unit
+
+
+networks:
+  pytest-pogo-unit:
