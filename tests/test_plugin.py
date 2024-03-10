@@ -3,8 +3,6 @@ import os
 import asyncpg
 import pytest
 
-import pytest_pogo
-
 
 @pytest.fixture()
 def postgres_dsn():
