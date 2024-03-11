@@ -2,7 +2,13 @@ import asyncio
 
 import pytest
 
+import pogo_migrate.config
 import pogo_migrate.testing
+
+
+@pytest.fixture()
+def pogo_config() -> pogo_migrate.config.Config:
+    return pogo_migrate.config.load_config()
 
 
 @pytest.fixture(scope="session")
