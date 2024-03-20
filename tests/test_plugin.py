@@ -5,6 +5,7 @@ import asyncpg
 import pytest
 
 import pogo_migrate.config
+import pytest_pogo  # noqa: F401
 
 
 @pytest.fixture()

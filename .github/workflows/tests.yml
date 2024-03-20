@@ -24,7 +24,7 @@ jobs:
           POSTGRES_PASSWORD: password
           POSTGRES_DB: unit
         ports:
-          - 5435:5432
+          - 5436:5432
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -43,8 +43,6 @@ jobs:
         poetry config virtualenvs.create false
         poetry install
     - name: Generate coverage report
-      env:
-        POSTGRES_DSN: postgres://unit:password@localhost:5435/unit
       run: |
         pytest --cov -x --cov-report=xml
     - name: Upload coverage to Codecov
@@ -70,7 +68,7 @@ jobs:
   #         POSTGRES_PASSWORD: password
   #         POSTGRES_DB: unit
   #       ports:
-  #         - 5432:5432
+  #         - 5436:5432
   #       options: >-
   #         --health-cmd pg_isready
   #         --health-interval 10s
@@ -89,8 +87,6 @@ jobs:
   #       poetry config virtualenvs.create false
   #       poetry install
   #   - name: Generate coverage report
-  #     env:
-  #       POSTGRES_DSN: postgres://unit:password@localhost:5432/unit
   #     run: |
   #       pytest -m "backwards_compat"
 
@@ -109,7 +105,8 @@ jobs:
         username: unit
         password: password
         database: unit
-        port: 5432
+        ports:
+          - 5436:5432
       id: postgres
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.version }}
@@ -122,7 +119,5 @@ jobs:
         poetry config virtualenvs.create false
         poetry install
     - name: Test with pytest
-      env:
-        POSTGRES_DSN: postgres://unit:password@localhost:5432/unit
       run: |
         pytest

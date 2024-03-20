@@ -70,7 +70,7 @@ asyncio_mode = "auto"
 testpaths = ["tests"]
 addopts = "--random-order"
 env = [
-    "D:POSTGRES_DSN=postgres://unit:password@localhost:5435/unit",
+    "D:POSTGRES_DSN=postgres://unit:password@localhost:5436/unit",
 ]
 
 
