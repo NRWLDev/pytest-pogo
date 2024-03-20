@@ -44,7 +44,7 @@ jobs:
         poetry install
     - name: Generate coverage report
       env:
-        POSTGRES_DSN: postgres://unit:password@localhost:5432/unit
+        POSTGRES_DSN: postgres://unit:password@localhost:5435/unit
       run: |
         pytest --cov -x --cov-report=xml
     - name: Upload coverage to Codecov
