@@ -96,12 +96,11 @@ jobs:
 
     strategy:
       matrix:
-        #os: [ubuntu-latest, macos-latest, windows-latest]
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
         version: ["3.9.x", "3.10.x", "3.11.x", "3.12.x"]
 
     steps:
-    - uses: ikalnytskyi/action-setup-postgres@v5
+    - uses: ikalnytskyi/action-setup-postgres@v6
       with:
         username: unit
         password: password
