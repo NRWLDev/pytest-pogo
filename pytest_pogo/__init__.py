@@ -1,4 +1,5 @@
 import logging
+import sys
 from contextlib import contextmanager
 
 import pytest
@@ -20,23 +21,31 @@ def pogo_config() -> pogo_migrate.config.Config:
     return pogo_migrate.config.load_config()
 
 
+def extract_verbosity() -> int:
+    verbose = set(sys.argv) & {"-v", "-vv", "-vvv"}
+    # If short verbosity is passed strip the `-` to get count of `v`s for verbosity setting.
+    verbose = len(verbose.pop()) - 1 if verbose else 0
+
+    # If full verbose flag is passed in, get count of flags
+    if "--verbose" in sys.argv:
+        verbose = sys.argv.count("--verbose")
+
+    return {
+        0: logging.ERROR,
+        1: logging.WARNING,
+        2: logging.INFO,
+        3: logging.DEBUG,
+    }.get(verbose, logging.DEBUG)
+
+
 @pytest.fixture(scope="session")
 async def pogo_engine(request: pytest.FixtureRequest):  # noqa: PT004, ANN201
-    with caplog_session(request) as caplog, caplog.at_level(logging.ERROR):
+    level = extract_verbosity()
+    with caplog_session(request) as caplog, caplog.at_level(level):
         await pogo_migrate.testing.apply()
 
     yield
 
     # Rollback all migrations
-    with caplog_session(request) as caplog, caplog.at_level(logging.ERROR):
+    with caplog_session(request) as caplog, caplog.at_level(level):
         await pogo_migrate.testing.rollback()
-
-
-@pytest.fixture(scope="session")
-async def pogo_engine_verbose():  # noqa: PT004, ANN201
-    await pogo_migrate.testing.apply()
-
-    yield
-
-    # Rollback all migrations
-    await pogo_migrate.testing.rollback()
