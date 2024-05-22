@@ -27,8 +27,7 @@ def extract_verbosity() -> int:
     verbose = len(verbose.pop()) - 1 if verbose else 0
 
     # If full verbose flag is passed in, get count of flags
-    if "--verbose" in sys.argv:
-        verbose = sys.argv.count("--verbose")
+    verbose = sys.argv.count("--verbose") if "--verbose" in sys.argv else verbose
 
     return {
         0: logging.ERROR,
