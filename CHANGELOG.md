@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.0.3 - 2024-05-22
+
+### Features and Improvements
+
+- Quiet down logs in pogo_engine fixture, and introduce pogo_engine_verbose with apply/rollback logs. [2ba1fdf](https://github.com/NRWLDev/pytest-pogo/commit/2ba1fdffce2803c5a724cb0c10028728e690d428)
+
 ## v0.0.2 - 2024-03-11
 
 ### Features and Improvements
