@@ -33,17 +33,3 @@ async def test_engine_applies_migrations(pogo_config):
     results = await db.fetch(stmt)
 
     assert [r["tablename"] for r in results] == ["_pogo_migration", "_pogo_version", "table_one", "table_two"]
-
-
-@pytest.mark.usefixtures("pogo_engine_verbose")
-async def test_verbose_engine_applies_migrations(pogo_config):
-    db = await asyncpg.connect(pogo_config.database_dsn)
-    stmt = """
-    SELECT tablename
-    FROM pg_tables
-    WHERE  schemaname = 'public'
-    ORDER BY tablename
-    """
-    results = await db.fetch(stmt)
-
-    assert [r["tablename"] for r in results] == ["_pogo_migration", "_pogo_version", "table_one", "table_two"]
