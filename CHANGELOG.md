@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.0.4 - 2024-05-22
+
+### Bug fixes
+
+- Use pytests -v flag rather than a duplicate fixture to expose more verbose logs [a3ac9ea](https://github.com/NRWLDev/pytest-pogo/commit/a3ac9ea8026221ba8a837c4df004e85e4855a855)
+
 ## v0.0.3 - 2024-05-22
 
 ### Features and Improvements
