@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytest-pogo"
-version = "0.0.3"
+version = "0.0.4"
 description = "Pytest plugin for pogo-migrate"
 readme = "README.md"
 homepage = "https://github.com/NRWLDev/pytest-pogo"
@@ -45,7 +45,7 @@ changelog-gen = {version = "^0.9", extras = ["bump-my-version"]}
 asyncpg = "^0.29.0"
 
 [tool.bumpversion]
-current_version = "0.0.3"
+current_version = "0.0.4"
 commit = true
 tag = true
 
