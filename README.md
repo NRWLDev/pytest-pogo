@@ -9,3 +9,6 @@
 
 Provides `pogo_engine` fixture which will apply local migrations at the start
 of the test session, and roll them back at the end.
+
+Additionally provides `pogo_engine_verbose` fixture, if migrations do not
+appear to be applying correctly, this will capture the verbose logs.
