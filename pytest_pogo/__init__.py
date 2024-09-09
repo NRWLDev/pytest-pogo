@@ -16,7 +16,7 @@ def caplog_session(request: pytest.FixtureRequest):  # noqa: ANN201
         yield pytest.LogCaptureFixture(request.node, _ispytest=True)
 
 
-@pytest.fixture()
+@pytest.fixture
 def pogo_config() -> pogo_migrate.config.Config:
     return pogo_migrate.config.load_config()
 
@@ -38,7 +38,7 @@ def extract_verbosity() -> int:
 
 
 @pytest.fixture(scope="session")
-async def pogo_engine(request: pytest.FixtureRequest):  # noqa: PT004, ANN201
+async def pogo_engine(request: pytest.FixtureRequest):  # noqa: ANN201
     level = extract_verbosity()
     with caplog_session(request) as caplog, caplog.at_level(level):
         await pogo_migrate.testing.apply()
