@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.0 - 2024-09-09
+
+### Miscellaneous
+
+- Migrate from poetry to uv for dependency and build management [[b71e868](https://github.com/NRWLDev/pytest-pogo/commit/b71e868de960948865ffeb254434c8374c167071)]
+- Update changelog-gen and related configuration. [[aec994b](https://github.com/NRWLDev/pytest-pogo/commit/aec994bb4f917dabe45d6296398aabcf3b7b2959)]
+
 ## v0.0.4 - 2024-05-22
 
 ### Bug fixes
