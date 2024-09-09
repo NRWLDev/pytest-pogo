@@ -8,7 +8,7 @@ import pogo_migrate.config
 import pytest_pogo  # noqa: F401
 
 
-@pytest.fixture()
+@pytest.fixture
 def postgres_dsn():
     return os.environ["POSTGRES_DSN"]
 
@@ -16,7 +16,7 @@ def postgres_dsn():
 def test_config_fixture(pogo_config):
     assert pogo_config == pogo_migrate.config.Config(
         migrations=Path.cwd() / "tests/migrations",
-        database_env_key="POSTGRES_DSN",
+        database_config="{POSTGRES_DSN}",
         root_directory=Path.cwd(),
     )
 

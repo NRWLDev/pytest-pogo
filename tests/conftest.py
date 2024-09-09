@@ -1,4 +1,5 @@
 import asyncio
+import contextlib
 import sys
 
 import pytest
@@ -12,7 +13,8 @@ pytest_plugins = ("pytester",)
 # incomplete coverage report.
 # Removing the plugin here ensures that it will be reloaded next time
 # it's imported.
-del sys.modules["pytest_pogo"]
+with contextlib.suppress(KeyError):
+    del sys.modules["pytest_pogo"]
 
 
 @pytest.fixture(scope="session")
