@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.1 - 2025-05-05
+
+### Bug fixes
+
+- Ensure urls render in pypi. [[dd2d677](https://github.com/NRWLDev/pytest-pogo/commit/dd2d677acb3232c5b361eca26780c691aa9a3396)]
+
 ## v0.1.0 - 2024-09-09
 
 ### Miscellaneous

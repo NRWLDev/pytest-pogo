@@ -1,6 +1,6 @@
 [project]
 name = "pytest-pogo"
-version = "0.1.0"
+version = "0.1.1"
 description = "Pytest plugin for pogo-migrate"
 readme = "README.md"
 authors = [
@@ -59,7 +59,7 @@ dev = [
 pogo = "pytest_pogo"
 
 [tool.changelog_gen]
-current_version = "0.1.0"
+current_version = "0.1.1"
 reject_empty = true
 allowed_branches = [
     "main",
