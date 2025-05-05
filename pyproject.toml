@@ -3,7 +3,6 @@ name = "pytest-pogo"
 version = "0.1.0"
 description = "Pytest plugin for pogo-migrate"
 readme = "README.md"
-homepage = "https://github.com/NRWLDev/pytest-pogo"
 authors = [
     {name = "Daniel Edgecombe", email = "daniel@nrwl.co"},
 ]
@@ -35,6 +34,9 @@ dependencies = [
     "pogo-migrate >= 0.0.8",
     "pytest >=7,<9",
 ]
+
+[project.urls]
+homepage = "https://github.com/NRWLDev/pytest-pogo"
 
 [project.optional-dependencies]
 dev = [
