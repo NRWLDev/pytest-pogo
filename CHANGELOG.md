@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.1 - 2026-01-20
+
+### Bug fixes
+
+- Fix python 313 dependencies [[ed1e40c](https://github.com/NRWLDev/pytest-pogo/commit/ed1e40cf18425841d9ab4317927314ed1848a0a0)]
+
 ## v0.2.0 - 2026-01-20
 
 ### Bug fixes
