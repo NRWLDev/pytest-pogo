@@ -1,8 +1,5 @@
-import asyncio
 import contextlib
 import sys
-
-import pytest
 
 pytest_plugins = ("pytester",)
 
@@ -15,10 +12,3 @@ pytest_plugins = ("pytester",)
 # it's imported.
 with contextlib.suppress(KeyError):
     del sys.modules["pytest_pogo"]
-
-
-@pytest.fixture(scope="session")
-def event_loop():
-    loop = asyncio.get_event_loop_policy().new_event_loop()
-    yield loop
-    loop.close()
