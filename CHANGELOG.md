@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.0 - 2026-01-20
+
+### Bug fixes
+
+- **Breaking** Support schemas in migration configuration, drop python 3.9 [[8d8e029](https://github.com/NRWLDev/pytest-pogo/commit/8d8e029a28fa7e460c205c1e57226a3d344de714)]
+
 ## v0.1.1 - 2025-05-05
 
 ### Bug fixes
