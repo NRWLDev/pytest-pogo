@@ -26,6 +26,8 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Programming Language :: Python :: 3",
 ]
 
@@ -49,6 +51,7 @@ dev = [
     # Style
     "ruff >= 0.14.10",
     "pre-commit >= 3.7.1",
+    "ty >= 0.0.17",
 
     # release
     "changelog-gen >= 0.13",
@@ -139,6 +142,9 @@ known-first-party = ["pogo_migrate"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
+
+[tool.ty.terminal]
+output-format = "concise"
 
 [build-system]
 requires = ["hatchling"]
